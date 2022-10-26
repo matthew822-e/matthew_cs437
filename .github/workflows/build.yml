@@ -44,7 +44,7 @@ jobs:
         restore-keys: ${{ runner.os }}-m2
     - name: JDK 8
       if: matrix.jdk == '8'
-      run: mvn edu.illinois:nondex-maven-plugin:1.1.2:nondex -Dtest=75f9950d5e1675dbb0617555c4502685ef4d4618,apollo-biz,com.ctrip.framework.apollo.biz.service.NamespaceBranchServiceTest#testUpdateBranchGrayRulesWithUpdateOnce -DnondexRuns=10
+      run: mvn -B clean package -P travis jacoco:report edu.illinois:nondex-maven-plugin:1.1.2:nondex -Dtest=75f9950d5e1675dbb0617555c4502685ef4d4618,apollo-biz,com.ctrip.framework.apollo.biz.service.NamespaceBranchServiceTest#testUpdateBranchGrayRulesWithUpdateOnce -Dmaven.gitcommitid.skip=true
     - name: JDK 11 
       if: matrix.jdk == '11'
       run: mvn -B clean compile -Dmaven.gitcommitid.skip=true
