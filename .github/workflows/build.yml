@@ -44,7 +44,7 @@ jobs:
         restore-keys: ${{ runner.os }}-m2
     - name: JDK 8
       if: matrix.jdk == '8'
-      run: mvn nondex:nondex -DnondexRunsWithoutShuffling=1
+      run: mvn clean install -pl apollo-biz/ test
     - name: JDK 11 
       if: matrix.jdk == '11'
       run: mvn -B clean compile -Dmaven.gitcommitid.skip=true
