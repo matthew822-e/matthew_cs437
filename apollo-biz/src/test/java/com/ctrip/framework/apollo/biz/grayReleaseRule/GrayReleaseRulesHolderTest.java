@@ -102,6 +102,7 @@ public class GrayReleaseRulesHolderTest {
 
     assertEquals(someReleaseId, grayReleaseRulesHolder.findReleaseIdFromGrayReleaseRule
         (someClientAppId, someClientIp, anotherClientLabel, someAppId, someClusterName, someNamespaceName));
+        System.out.print("HERE");
     assertEquals(someReleaseId, grayReleaseRulesHolder.findReleaseIdFromGrayReleaseRule
         (someClientAppId, anotherClientIp, someClientLabel, someAppId, someClusterName, someNamespaceName));
     assertEquals(someReleaseId, grayReleaseRulesHolder.findReleaseIdFromGrayReleaseRule
