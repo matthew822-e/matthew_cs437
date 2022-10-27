@@ -44,7 +44,7 @@ jobs:
         restore-keys: ${{ runner.os }}-m2
     - name: JDK 8
       if: matrix.jdk == '8'
-      run: mvn compile test
+      run: mvn -pl apollo-biz test -Dtest= com.ctrip.framework.apollo.biz.grayReleaseRule.GrayReleaseRulesHolderTest#testScanGrayReleaseRules
     - name: JDK 11 
       if: matrix.jdk == '11'
       run: mvn -B clean compile -Dmaven.gitcommitid.skip=true
